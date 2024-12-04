@@ -4,12 +4,13 @@ from flask import Flask, request, jsonify
 from dotenv import load_dotenv
 from docx import Document
 import re
-
+from flask_cors import CORS 
 # Load environment variables
 load_dotenv()
 
 # Set up the Flask app
 app = Flask(__name__)
+CORS(app)
 
 # Get the XAI API key from the environment variables
 XAI_API_KEY = os.getenv("XAI_API_KEY")
